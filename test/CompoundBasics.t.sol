@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.16;
+pragma solidity 0.8.17;
 
 import "forge-std/Test.sol";
 import {Users} from "./utils/Users.sol";
@@ -11,7 +11,7 @@ import {IGovernorBravo} from "../src/Interfaces/IGovernorBravo.sol";
 import {IERC20} from "../src/Interfaces/IERC20.sol";
 
 
-contract CounterTest is Test, Users {
+contract CompoundBasicsTest is Test, Users {
     mapping (address => address) underlyingToMarket;
 
     function setUp() public {
@@ -85,6 +85,12 @@ contract CounterTest is Test, Users {
         console.log(IERC20(USDC).balanceOf(users[1]), "User 1 USDC balance after repay");
         IComptroller(COMPTROLLER).exitMarket(cETH);  
         console.log("Is user in market?", IComptroller(COMPTROLLER).checkMembership(users[1], cETH));
+        vm.stopPrank();
+    }
+
+    function testLiquidateBorrow() public {
+        vm.startPrank(users[1]);
+        IcETH(cETH).liquidateBorrow{value: 727e16}(REAL_USER1, cETH);
         vm.stopPrank();
     }
 }
