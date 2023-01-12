@@ -27,8 +27,6 @@ forge build
 
 ## Instructions
 
-### TUSD Double Entry
-
 ```
 forge test -f https://eth-mainnet.alchemyapi.io/v2/[YOUR_KEY] 
 ```
