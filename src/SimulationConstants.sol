@@ -8,6 +8,9 @@ contract SimulationConstants {
     address public constant COMPTROLLER = 0x3d9819210A31b4961b30EF54bE2aeD79B9c9Cd3B;
     address public constant GOVERNOR = 0xc0Da02939E1441F497fd74F78cE7Decb17B66529;
 
-    /// @dev Supplied 8,81 ETH borrowed 7,27 ETH 
+    /// @dev Supplied 8,81 ETH borrowed 7,27 ETH
     address public constant REAL_USER1 = 0x3FC33C9D7758bb59d3488c569a2BCE0ffBD01366;
+
+    address public constant POLYCHAIN = 0xea6C3Db2e7FCA00Ea9d7211a03e83f568Fc13BF7;
+    address public constant A16Z = 0x9AA835Bc7b8cE13B9B0C9764A52FbF71AC62cCF1;
 }
